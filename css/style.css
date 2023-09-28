@@ -1,0 +1,1283 @@
+@charset "UTF-8";
+
+html {
+  font-size: 16px;
+}
+
+body {
+  color: #624649;
+  font-size: 1rem;
+  font-family: "YuGothic", Yu Gothic, sans-serif;
+  box-sizing: border-box;
+}
+
+ul,
+li,
+ol {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+  transition: 0.6s;
+}
+
+a:hover {
+  opacity: 0.8;
+  transition: 0.6s;
+}
+
+.container {
+  max-width: 1024px;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.g-navi {
+  position: absolute;
+  background-color: #a67c52;
+  width: 100%;
+}
+
+
+/* メニュー（liタグ）を横並びにするために「Flexbox」を設定 */
+.g-navi ul {
+  display: flex;
+  /*「Flexbox」を利用するための設定 */
+
+  flex-wrap: nowrap;
+  /*Flexboxの中で子要素を折り返すか1列に詰めるかの設定 nowrap＝折り返さない*/
+
+  justify-content: space-around;
+  /* Flexboxの子要素を横並びにした時の配置方法
+  両端基準で均等に並べる（space-between） */
+
+  align-items: center;
+  /*Flexboxの子要素を縦並びにした時の配置方法 */
+}
+
+.g-navi ul li {
+  flex-basis: 16.6%;
+  /* ① flex-basis:flex子要素の横幅 */
+
+  text-align: center;
+}
+
+.g-navi ul li a {
+  display: block;
+  color: #fff;
+  padding: 20px 0;
+  /* ② padding:内側の余白設定 */
+}
+
+
+/* 何かしらのアクションが」あった際に変化させるclassを「擬似クラス」という。マウスオンした時に変化する「：hover」を使う */
+.g-navi ul li a:hover {
+  /* ① マウスオン時に文字色と背景色を変化させる */
+
+  /* ② マウスオン時に背景を透過させるため「opacity」を設定する */
+
+  color: #ccc;
+  /*① */
+  background-color: #bf9b76;
+  /* ① */
+  opacity: 0.5;
+  /*② */
+}
+
+.a:hover {
+  /* opacityは不透明度を設定できる「0〜1.0」の範囲で設定できる0「完全に透明」1.0で「完全に不透明」 */
+  opacity: 0.8;
+  /* 要素が変化するまでの時間を指定 */
+  transition: 0.6s;
+}
+
+#main-visual {
+  background-image: url(../image/image/mv.jpg);
+  /*① */
+  /* ①で設定した背景画像がデフォルトではタイルのように繰り返し表示されてしまう。これを防ぐために「background-repeat」に（no-repeat）を指定 */
+  background-repeat: no-repeat;
+  /*② */
+  /* 背景画像で背景全体を覆う */
+  background-size: cover;
+  /* メインビジュアルエリアの高さを設定 */
+  /* vh：ブラウザ画面縦幅の%、vw：ブラウザ画面横幅の% */
+  height: 100vh;
+  max-height: 760px;
+}
+
+h1 {
+  font-family: 'Courier New',
+    Courier,
+    monospace,
+    serif;
+  font-size: 4rem;
+  /* 文字の間隔 */
+  letter-spacing: 10px;
+  color: #7d5226;
+  /* 文字の太さ h1タグなどの「見出し」はデフォルトで太字（bold）になっているため、今回は（normal） */
+  font-weight: normal;
+  /* テキストに影をつけられる。4つの値はそれぞれ「水平方向ずらし、垂直方向ずらし、ぼかし、色(+透明度）」 */
+  text-shadow: 0px 0px 4px #fff;
+  /* 影やぼかしをつけられるプロパティ 「水平方向ずらし、垂直方向ずらし、ぼかし、色(+透明度）」
+  */
+  filter: drop-shadow(4px 2px 4px #fff);
+}
+
+.mv-wrapper {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+/* 親要素（.mv-wrapper）に対して子要素（.mv-right）を自由な場所に配置するため、親要素に対して配置設定「position」を相対的（relative）に設定 */
+.mv-right {
+  /* 親要素（.mv-wrapper）の中で絶対値で位置を決めるため「position」を（absolute）に設定 */
+  position: absolute;
+  /* 「top」「right」プロパティを使用して、親要素（.mv-wrapper）の上端・右端からの距離を設定 */
+  top: 240px;
+  max-width: 100%;
+}
+
+.text {
+  font-family: 'Courier New',
+    Courier,
+    monospace,
+    serif;
+  font-size: 1.625rem;
+  letter-spacing: 4px;
+  color: #7d5226;
+  text-align: center;
+  filter: drop-shadow(4px 2px 4px #fff);
+  text-shadow: 0px 0px 4px #fff;
+  margin-bottom: 80px;
+  padding: 15px 0 0 0;
+}
+
+/* ボタン配置を「text-align」で中央寄せ（center）にして指定。(子要素（.purchase-button a）をインライン要素で設定するため、位置を設定するためには余白設定「margin」ではなく、テキスト配置「text-align」での調整が必要 */
+.purchase-button {
+  text-align: center;
+}
+
+.purchase-button a {
+  display: inline-block;
+  background-color: #7d5226;
+  color: #fff;
+  /* グローバルナビゲーションのテキストリンクを大きくするため「padding」と「文字サイズ」を大きくする */
+  padding: 15px 50px;
+  font-size: 1.375rem;
+}
+
+/* マウスオン時に背景色と文字色を変更 */
+.purchase-button a:hover {
+  background-color: #fff;
+  color: #7d5226;
+}
+
+/* エリア上下に余白をつける */
+section {
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+
+
+h2 {
+  font-size: 3rem;
+  /* 英語タイトル（h2）と日本語タイトル（.ja-title）の上下間隔を狭める。縮めます。余白を詰める場合は−の値を利用することができる。 */
+  margin-bottom: -5px;
+  font-family: 'Courier New',
+    Courier,
+    monospace,
+    serif;
+  font-weight: normal;
+  /* 文字間の調整 */
+  letter-spacing: 4px;
+  color: #7d5226;
+}
+
+.ja-title {
+  font-size: 1rem;
+  color: #7d5226;
+}
+
+.title {
+  /* text-align」を中央寄せ（center）にすることでエリアタイトルを中央に配置し、同時に周りの余白を広げる */
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.concept-copy {
+  text-align: center;
+}
+
+.main-copy {
+  font-size: 1.5rem;
+  margin-bottom: 50px;
+  /* キャッチコピーは（h3）の見出しタグであるためデフォルトは太字になるが、デザインカンプでは通常な太さなので「font-weight: normalを設定; */
+  font-weight: normal;
+}
+
+/* 紹介文のCSSは共通で「文字サイズ1rem(16px)」、「文字間隔0.8px」にする */
+.about-text {
+  font-size: 1rem;
+  letter-spacing: 0.8px;
+}
+
+.concept-text {
+  margin-bottom: 20px;
+  line-height: 1.8;
+}
+
+#concept,
+#feature,
+#thought,
+#coffeelife,
+#lineup,
+#package,
+#store,
+#contact {
+  padding: 80px 0;
+}
+
+#feature {
+  background-color: #e4ecef;
+}
+
+.box-design {
+  background-color: #fff;
+}
+
+.feature-box {
+  max-width: 320px;
+}
+
+/* 擬似クラス（:nth-of-type）とは、ulタグ内のliタグのように「繰り返し同じ要素が記述されている」場合に「2番目の要素だけCSSプロパティを設定したい」などの調整ができるようになる */
+.feature-box:nth-of-type(2) {
+  background-color: #fffde8;
+}
+
+.feature-text {
+  padding: 20px 15px;
+}
+
+.feature-number {
+  font-size: 1.5rem;
+  letter-spacing: 2px;
+  font-family: 'Courier New', Courier, monospace, serif;
+  color: #7d5226;
+}
+
+.feature-title {
+  font-size: 1.375rem;
+  font-weight: bold;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.feature-about {
+  font-size: 1rem;
+}
+
+.feature-image {
+  max-width: 100%;
+}
+
+#thought {
+  background-color: #fff;
+}
+
+/* 「スタッフボックス」や「進む・戻るボタン」を親要素（.thought-container）を基準に移動できるように、親要素に「position」を相対的（relative）に設定 */
+.thought-container {
+  position: relative;
+}
+
+.staff-box {
+  /* 画像とテキストを横並びにするために、親要素（.staff-box）に「Flexbox」を設定 */
+  display: flex;
+  /* Flexbox内を折り返しなしにする */
+  flex-wrap: nowrap;
+  /* justify-content：space-betweenとすることで両端を基準として均等の間隔で配置 */
+  justify-content: space-between;
+  background: #e0c5a8;
+  /* ボックスの内側に上下左右と余白を指定 */
+  padding: 2rem;
+}
+
+.staff-box {
+  display: none;
+}
+
+.staff-box.active {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  background: #e0c5a8;
+  padding: 2rem;
+}
+
+
+/* インライン要素は */
+/* ①インライン要素で囲んだ内容に対しては、幅と高さを指定する事が出来ません。 ②左右の余白は指定できますが、上下に余白を指定は出来ません。 ③左右にある他要素との間隔は調整出来ますが、上下にある他要素との間隔は調整出来ません (span a strong img input textarea br)*/
+.staff-image {
+  /* 画像はimgタグであるためインライン要素であり、このままではサイズの設定や余白指定ができない。そのためブロック要素に変更 */
+  display: block;
+  /* テキストエリアと横並びで配置するため、画像の横幅を少し余裕を持たせた48%に設定 */
+  width: 48%;
+}
+
+.staff-text {
+  width: 48%;
+}
+
+.staff-title {
+  font-size: 1.375rem;
+  text-align: center;
+  margin-bottom: 30px;
+  /* フォントの太さ　前々の設定で太字になっているためnormalで設定 */
+  font-weight: normal;
+}
+
+.staff-about {
+  /* 外側の下余白「margin-bottom」を20pxで指定 */
+  margin-bottom: 20px;
+  /* 紹介文（.staff-about）に対しては、内側の余白「padding」を20p */
+  padding: 20px;
+  background: #fff;
+}
+
+.staff-name {
+  text-align: right;
+}
+
+/* 中央に要素を浮かす・要素を回転する 〜transformプロパティ〜 要素を回転させる際は「transform」プロパティを使用します。 ★transformプロパティ transform: rotate(〇〇deg); 〇〇には360度までの数値を入れる*/
+
+.slide-button {
+  /* 配置方法「position」を絶対値（absolute）に設定 */
+  position: absolute;
+  /* 親要素を基準に配置位置を上部「top」から0、下部「bottom」からも0で指定 上下ともに0と指定することで上下の中心に要素が配置される*/
+  top: 0;
+  bottom: 0;
+  display: block;
+  width: 48px;
+  height: 48px;
+  /* solid=１本の直線、実線を表示 */
+  border-top: 2px solid #c0c0c0;
+  margin: auto;
+  /*自動（auto)で余白を調節 */
+  /* 「cursor」プロパティを用いて、マウスのカーソルがコンテンツに触れた際のマークを「ポインター（pointer：指マーク）」に設定 */
+  cursor: pointer;
+  z-index: 1;
+  /*z-index=コンテンツの重ね順(数字が大きいほど上に重なる）*/
+}
+
+.prev {
+  /* 戻るボタンは左方向「left」から10pxに移動 */
+  left: 10px;
+  /*「＜」なるよう、斜め左下に線を入れるため、左辺に線「border-left」を指定 */
+  border-left: 2px solid #c0c0c0;
+  /* 「transform」で-45°回転（反時計回り）させると「border-top」は斜め左上に移る */
+  transform: rotate(-45deg);
+}
+
+.next {
+  /* 進むボタンは右方向「right」から10pxに移動 */
+  right: 10px;
+  /* 「＞」なるよう、斜め右下に線を入れるため、右辺に線「border-right」を指定 */
+  border-right: 2px solid #c0c0c0;
+  /*「transform」で45°回転（時計回り）させると、「border-top」は斜め右上に移る */
+  transform: rotate(45deg);
+}
+
+/* Lifeエリア全体にグラデーションのついた背景「background」を設定 */
+#coffeelife {
+  /* グラデーションをつける場合、linear-gradient＝上下に対して徐々に色が変わる「線形グラデーション」を使用し色の「スタート値」と「ゴール値」を設定する */
+  background: linear-gradient(#e0c5a8, #e4ecef);
+}
+
+.life-type {
+  text-align: center;
+}
+
+/* 余白の調整などを行うため、ブロック要素に変更する。そして、上下左右内側の余白を10pxに設定 */
+.life-type a {
+  display: block;
+  padding: 10px;
+  color: #333;
+}
+
+/* 擬似クラスの「:hover」を用いて、マウスオンした際のスタイルを設定 */
+.life-type a:hover {
+  color: #955e64;
+  /* 水平方向の影の距離(正の値＝右、負の値＝左)
+  垂直方向の影の距離(正の値＝下、負の値＝上)
+  /* ぼかし距離(値が大きいほど影がぼやける) */
+  /* 全方向へ広がる影の距離(正の値＝拡大、負の値＝縮小) */
+  /* rgba(red,green,blue,透明度) */
+  box-shadow: 0 15px 30px -5px rgba(0, 0, 0, 15), 0 0 5px rgba(0, 0, 0, 1);
+}
+
+.life-img {
+  width: 100%;
+  margin-bottom: 5px;
+}
+
+.lineup-menu {
+  margin-bottom: 3rem;
+}
+
+.lineup-menu ul {
+  display: flex;
+  /*横並びにする */
+  flex-wrap: nowrap;
+  /*折り返さない*/
+  justify-content: space-between;
+  /*両端を基準に間隔を均等にする*/
+  border-bottom: 2px solid #a67c52;
+  /*2pxの下部直線*/
+}
+
+.lineup-menu ul li {
+  width: 100%;
+  text-align: center;
+}
+
+/* liタグにて横幅「width」の設定をしましたが、背景色やデザインの反映はaタグ（.lineup-menu ul li a）で行う */
+.lineup-menu ul li a {
+  /* テキスト以外の範囲もクリック範囲とするためブロック要素に変更 */
+  display: block;
+  color: #fff;
+  background-color: #e0c5a8;
+  border: 1px solid #fff;
+  border-bottom: none;
+  border-radius: 5px;
+  /*aタグを角丸にする*/
+  padding: 0.5rem 0;
+  /*上下の内側の余白を少し広げる*/
+}
+
+/* aタグの範囲にマウスオン時のデザインを設定 */
+.lineup-menu ul li a:hover {
+  color: #fff;
+  background-color: #a67c52;
+}
+
+/* 表示されている商品ラインナップがメニューと同様のときに、マウスオン時と同じスタイルになるよう、class名（.active）がメニュー（liタグ）にある場合のCSS設定 */
+/* ※注意：class名（.active）はliタグにつくようにしますが、実際にCSS設定が変わるのはaタグになる */
+.lineup-menu ul li.active a {
+  color: #fff;
+  background-color: #a67c52;
+}
+
+.feature-wrapper,
+.life-wrapper,
+.lineup-wrapper,
+.package-wrapper {
+  /* 横並びにする設定①から③ */
+  display: flex;
+  /*①*/
+  flex-wrap: nowrap;
+  /*②*/
+  justify-content: space-between;
+  /*③*/
+}
+
+.lineup-product {
+  flex-basis: 31%;
+  /*flexbox内の横幅を設定する*/
+}
+
+.lineup-image {
+  /* 画像エリアを角丸「border-radius」にする */
+  border-radius: 30px;
+  border: 1px dashed #a67c52;
+  /*dashed=破線*/
+  padding: 4rem 0;
+  /*画像の上下余白「padding」を調整*/
+  text-align: center;
+  margin-bottom: 20px;
+  /*下にあるコンテンツとの余白*/
+}
+
+.name-en {
+  font-size: 1.5rem;
+  font-weight: bold;
+  /*文字の太さ*/
+}
+
+/* 紹介文の行間を少し広げる */
+.lineup-text {
+  line-height: 1.8;
+}
+
+.more-lineup {
+  text-align: center;
+  margin-top: 60px;
+}
+
+/* ボタンのデザインを設定 */
+.btn-more {
+  /*インラインブロック要素に変更する
+  ・inline-blockにすることで要素の範囲をHTMLで記述した範囲にすることが可能
+  ・inline(上下が指定できない)に対してinline-blockは上下左右範囲を指定できる*/
+  display: inline-block;
+  background-color: #a67c52;
+  color: #fff;
+  padding: 10px 100px;
+  /*(上下 左右)*/
+  font-size: 1.375rem;
+  letter-spacing: 3px;
+  /*文字間*/
+}
+
+/* ボタンをマウスオンした時のスタイルを設定 */
+.btn-more:hover {
+  background-color: #462e23;
+  color: #fff;
+}
+
+.package-lineup {
+  flex-basis: 31%;
+}
+
+.package-image {
+  display: block;
+  margin: 0 auto;
+  max-height: 332px;
+  margin-bottom: 20px;
+}
+
+.package-title {
+  margin-bottom: 10px;
+  letter-spacing: 2px;
+}
+
+.package-value {
+  color: #7d5226;
+  font-weight: bold;
+  letter-spacing: 2px;
+  margin-bottom: 20px;
+}
+
+/* セレクトボックスが横幅いっぱいに選択できるよう横幅を100%に設定 */
+.package-select {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+/* セレクトボックスの選択肢が数字のため、選択できる横幅を短めに50pxで設定。また、ボタンとの下余白を20pxで設定 */
+.purchase-number {
+  margin-bottom: 20px;
+}
+
+.number {
+  width: 50px;
+}
+
+/* 「セレクトボックス」をHTMLで記述する場合はselectタグとoptionタグを使いますが、はじめに設定した「reset.css」の影響でテキストしか表示されていない状態になっているので、「style.css」にて追加のCSSを反映させる */
+select {
+  /* セレクトボックスのボタンが何も表示されない状態であるため「appearance」というプロパティでボタンが示されるように指定。これは「reset.css」を使用した時のみの対応である。(「-moz-」「-webkit-」という接頭辞は「ベンダープレフィックス」と呼ばれるもので、ブラウザそれぞれに対して指示をする書き方である */
+  -moz-appearance: menulist;
+  -webkit-appearance: menulist;
+  /* セレクトボックスの枠線を表示 */
+  border-style: solid;
+  /* セレクトボックス自体の縦幅「height」を少し広げる */
+  height: 28px;
+}
+
+/* 「::-ms-expand」をつけることでInternet Explorerを使用した際に反映される設定 */
+select::-ms-expand {
+  display: block;
+}
+
+.select-cart {
+  /* カートに入れる」ボタン（.select-cart）のデザインを反映 今回のボタンはマウスオン時にボタンを実際に押したかのようにヘコむ動きをCSSで再現*/
+
+  /* ① 下のテキストとの余白を30px空け、ボタンエリアの高さを54pxで設定。(ボタンエリアの高さをボタン（.select-cart a）ではなくて全体（.select-cart）に設定するのは、ボタンをヘコませるアクションをつける際に、縦幅が変わってしまうのを防ぐため */
+  margin-bottom: 30px;
+  height: 54px;
+}
+
+.select-cart a {
+  /* ボタン内のテキストを上下左右中央寄せにするため、「Flexbox」を使って表示。縦方向と横方向どちらも中央寄せにする */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 50px;
+  background-color: #586fc8;
+  /* ボタンに影をつけるため「filter」を使って、ボタンの下部に縦幅4pxの影をつける。色はデザインの通り濃い青（#243f81）に設定 */
+  filter: drop-shadow(0px 4px 0px #243f81);
+  font-size: 1.25rem;
+  color: #fff;
+  margin-bottom: 4px;
+  /* aタグには共通で「transition」を0.6秒に指定しているが、今回はマウスオン時の動きをハッキリさせるため0秒に指定 */
+  transition: 0s;
+}
+
+.select-cart a:hover {
+  /* マウスオン時（.select-cart a: hover）にボタンをヘコませるスタイルを記述。⑤にて「filter」でつけた影を非表示（none）にし、影だった縦幅「height」を50px+4px（54px）にしてボタン範囲を伸ばす動作をさせる */
+  filter: none;
+  height: 54px;
+  margin-bottom: 0;
+  transition: 0s;
+}
+
+#store {
+  background: #e4ecef;
+}
+
+/* GoogleMap（.map-image）とテキストエリア（cafe-text）を横並びにするため、エリア全体（.store-wrapper）に「Flexbox」を指定 */
+.feature-wrapper,
+.life-wrapper,
+.lineup-wrapper,
+.package-wrapper,
+.store-wrapper {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+}
+
+/* GoogleMap（.map-image）とテキストエリア（cafe-text）の各横幅「flex-basis」を設定 */
+/* ① GoogleMap（.map-image）とテキストエリア（.cafe-text）両方の横幅を「flex-basis」で48%に設定 */
+.map-image,
+.cafe-text {
+  flex-basis: 48%;
+}
+
+.store-name {
+  font-size: 1.25rem;
+  letter-spacing: 2px;
+  /*文字間*/
+  font-weight: bold;
+  /*太文字*/
+  margin-bottom: 30px;
+}
+
+
+/* addressタグはデフォルトだと斜字になっているので文字のスタイル「font-style」を通常の文字（normal）に戻します */
+address {
+  font-style: normal;
+  letter-spacing: 1px;
+  /*「letter-spacing」文字間 */
+  line-height: 1.8;
+  /*line-height:行間*/
+}
+
+/* 電話番号（.store-address）のaタグはデフォルトだと青字になっているので、文字色「color」をテキストと同じ色（#624649）に変更 */
+.store-address {
+  color: #624649;
+}
+
+#contact {
+  background: #e0c5a8;
+}
+
+form {
+  margin: 0 auto;
+  max-width: 500px;
+}
+
+.ct-block {
+  margin-bottom: 32px;
+}
+
+.contact-text {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.form-name,
+.form-mail,
+.cp-howto select {
+  border: 1px solid #b1b1b1;
+  width: 100%;
+  height: 40px;
+  padding: 0 10px;
+  background: #fff;
+}
+
+textarea {
+  border: 1px solid #b1b1b1;
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  background: #fff;
+}
+
+.cp-howto {
+  /* relativeは移動するときの基準が基準が元いた場所になる。つまりpositionを記述する前に配置されていた場所から移動するということ。
+  子要素で▼をつけるためrelativeを指定*/
+  position: relative;
+  border: 1px solid #b1b1b1;
+  background: #fff;
+}
+
+/* ▼をつける部分 */
+.cp-howto::before {
+  position: absolute;
+  top: 14px;
+  right: 10px;
+  /*content: "";=『:before』『:after』の擬似要素でコンテンツを表示させる際はこちらをつける*/
+  content: '';
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-top: 13px solid #666;
+}
+
+.cp-howto select {
+  border: none;
+  outline: none;
+  background: transparent;
+  background-image: none;
+  box-shadow: none;
+  -webkit-appearance: none;
+  appearance: none;
+  padding: 10px 40px 10px 10px;
+  /*[▼]部分の内側に余白をつける*/
+}
+
+/*internet Explorer用の記述*/
+.cp-howto select::-ms-expand {
+  display: none;
+}
+
+/* 「overflow」は、親要素よりも子要素が大きくなり、はみ出てしまう場合にどのように表示するか設定します。 例えば、はみ出したエリアを表示させない場合、「overflow: hidden;」と記述します
+・overflow:visible（初期値）=内容は内側に表示されることがある
+・overflow:hidden;=内容は親要素のボックスに合わせて切り取られる
+・overflow:scroll;=内容は親要素のボックスからはみ出た部分はスクロールして見れるようになる*/
+
+/*送信ボタン*/
+.send-button {
+  display: block;
+  background-color: #7d5226;
+  font-size: 1.375rem;
+  padding: 10px 120px;
+  margin: 0 auto;
+  color: #fff;
+  transition: 0.6s;
+}
+
+.send-button:hover {
+  background-color: #fff;
+  color: #dd918e;
+  transition: 0.6s;
+}
+
+footer {
+  background: #a67c52;
+  color: #fff;
+}
+
+.footer-content {
+  display: flex;
+  flex-wrap: nowrap;
+  /* 両端を基準に均等な間隔（space-around）に設定 */
+  justify-content: space-around;
+  /* 両端の余白を均等に保つために、左右の余白をautoに設定、また上下の内側余白を40pxで設定 */
+  margin: 0 auto;
+  padding: 40px 0;
+}
+
+.footer-content a {
+  color: #fff;
+}
+
+.footer-content a:hover {
+  color: #624649;
+}
+
+/* このまま「Flexbox」で並べると、全てのエリアが均等な横幅になってしまうので、Flexboxのサイズ割り当て設定「flex-grow」で横幅比を指定 メニューボックス（.menu）と利用規約ボックス（.menu）の横幅比「flex-grow」を1に設定し、ロゴエリア（.logo-wrapper）を2に設定し、「2：1：1」の横並びになるようにします*/
+.logo-wrapper {
+  flex-grow: 2;
+}
+
+.menu {
+  flex-grow: 1;
+}
+
+.logo {
+  display: block;
+  font-size: 3rem;
+  font-family: 'Courier New', Courier, monospace;
+  letter-spacing: 6px;
+  /*文字間「letter-spacing」*/
+  margin-bottom: 10px;
+}
+
+.sns-block {
+  display: flex;
+  justify-content: flex-start;
+  /*フレックスアイテムを先頭に寄せる*/
+  align-items: center;
+}
+
+.mark {
+  margin-right: 1rem;
+}
+
+.menu ul li {
+  letter-spacing: 2px;
+  /*文字間「letter-spacing」*/
+  margin-bottom: 20px;
+}
+
+footer small {
+  padding-bottom: 20px;
+  display: block;
+  text-align: center;
+}
+
+
+/* SP用css */
+/* 今回は画面幅が769px以上になると、レイアウトがPC版へ切り替わる形になるため、最大横幅「max-width」を768px以下で指定 */
+@media screen and (max-width:768px) {
+
+  /* コンテンツの横幅が画面幅よりも広い場合に、大きく余白が生じてしまいます。 そのため、bodyタグに対して、画面幅よりもbodyタグの横幅が長くならないように、以下の通り記述 */
+  .container {
+    overflow-x: hidden;
+    /*非表示（hidden) 横幅がコンテンツ幅（スマホ時は画面幅）よりもはみ出てしまった場合は強制的に表示されない形で設定*/
+  }
+
+  /*元々記述していた(g-navi)をコメントアウト
+  .g-navi {
+    display: none;
+  }*/
+  .g-navi {
+    display: block;
+    position: fixed;
+    z-index: 2;
+    padding-top: 60px;
+    /*傾きを設定(transform: translateY(%))
+    translateYはY軸方向に移動する距離を指定する要素
+    -100%とし通常時は画面上には表示されないようにする*/
+    transform: translateY(-100%);
+    transition: .5s ease-in-out;
+    height: 100vh;
+  }
+
+  .g-navi ul {
+    display: block;
+  }
+
+  .g-navi.active {
+    /*通常時は-100%で見えないようにしていたが、ハンバーガーボタン(.menu-trigger)が選択され(.active)が付与された時に↓が適用され、グローバルナビゲーションエリアが表示される*/
+    transform: translateY(0%);
+    transition: .5s ease-in-out;
+  }
+
+  .g-navi-sp {
+    position: fixed;
+    /*コンテンツの配置を固定に設定*/
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #a67c52;
+    width: 100%;
+    height: 60px;
+    padding: 4%;
+    z-index: 3;
+    /*ヘッダーエリアは他コンテンツよりも重ね順を前にするため「z-index」を3と設定*/
+  }
+
+  /* ロゴエリア */
+  .sp-logo {
+    font-size: 1.5rem;
+    color: #fff;
+    letter-spacing: 3px;
+    font-family: 'Courier New', Courier, monospace;
+  }
+
+  /* ハンバーガーメニュー */
+  .menu-trigger {
+    position: relative;
+    width: 30px;
+    height: 42px;
+    cursor: pointer;
+    /*カーソル設定「cursor」を指差し（pointer）に指定*/
+  }
+
+  /* ハンバーガーメニューの横線（.menu-trigger span */
+  .menu-trigger span {
+    display: block;
+    /* 同じサイズの線を三本配置するために「position」を（absolute）にする */
+    position: absolute;
+    width: 30px;
+    border-bottom: solid 3px #fff;
+    /* 線の角を丸くする */
+    border-radius: 3px;
+    transition: .35s ease-in-out;
+    /*滑らかに動くように（ease-in-out)に設定*/
+  }
+
+  /* 白線の位置を、上部からの距離「top」を使って配置する。それぞれ擬似クラス（:nth-child）を使用 */
+  .menu-trigger span:nth-child(1) {
+    top: 6px;
+  }
+
+  .menu-trigger span:nth-child(2) {
+    top: 18px;
+  }
+
+  .menu-trigger span:nth-child(3) {
+    top: 30px;
+  }
+
+
+  #main-visual {
+    background-image: url(../image/image/sp-mv.jpg);
+    /* 差し替えた画像（../image/sp-mv.jpg）のサイズに合わせて高さ「height」を設定 */
+    height: 900px;
+    /* PC画面用に設定していた縦幅の最大値「max-height」については、受け継ぐ設定（inherit）に変更 */
+    max-height: inherit;
+    /* 上からの内余白を60px指定し、背景画像が適切に表示されるようにする */
+    padding-top: 60px;
+  }
+
+  .mv-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* 縦幅「height」が子要素のコンテンツ（テキストやボタン）の高さに依存してしまうため、100%と設定 */
+    height: 100%;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+    letter-spacing: 3px;
+    text-align: center;
+  }
+
+  .mv-right {
+    /* 親要素の「mv-wrapper」にdisplay: flexとalign-items:centerを設定し、子要素のmv-rightにposition:relativeを設定することで、相対位置(relative)に子要素であるmv-rightが配置される */
+    position: relative;
+    /* PC版のcssの値「top: 240px」だと大きく下に配置してしまうので、スマホサイズに幅が変わった時に上書きするように「@media screen and (max-width:767px)」内でtop:0を設定 */
+    top: 0;
+    right: 0;
+  }
+
+  .text {
+    font-size: 1rem;
+    margin-bottom: 30px;
+    letter-spacing: 2px;
+  }
+
+  .concept-img {
+    width: 100%;
+  }
+
+  .concept-img img {
+    max-width: 100%;
+  }
+
+  #concept,
+  #feature,
+  #thought,
+  #coffeelife,
+  #lineup,
+  #package,
+  #store,
+  #contact {
+    padding: 60px 0;
+  }
+
+  /* こだわりエリア */
+  .feature-wrapper {
+    flex-wrap: wrap;
+  }
+
+  .feature-box {
+    margin-bottom: 20px;
+    max-width: inherit;
+  }
+
+  .feature-image {
+    width: 100%;
+  }
+
+  /* Thoughtエリア */
+  .staff-box {
+    display: block;
+    /*横並びでなくなる*/
+    /* スマホ画面では背景がテキストエリアのみになるので、背景「background」を非表示にする */
+    background: none;
+    /* 背景「background」を非表示にし、「padding」の調整を行う。今回は左右と下だけスマホ画面のデザインに合わせた余白として使い、上だけタイトルとの間隔が開いてしまうので0に設定 */
+    padding: 0 2rem 2rem 2rem;
+  }
+
+  .staff-box {
+    display: none;
+  }
+
+  .staff-box.active {
+    display: block;
+    background: none;
+    padding: 0 2rem 2rem 2rem;
+  }
+
+  /* * 想いのエリア */
+  .staff-image {
+    width: 100%;
+    /* 縦並びになっている画像とテキストエリアの間に間隔をあける必要がある。そのため「margin-bottom」を15pxで設定 */
+    margin-bottom: 15px;
+  }
+
+  .staff-text {
+    width: 100%;
+    background: #e0c5a8;
+    padding: 15px 10px 10px;
+  }
+
+  .staff-title {
+    text-align: left;
+    margin-bottom: 15px;
+    line-height: 1.8;
+    /*行間*/
+  }
+
+  .staff-about {
+    margin-bottom: 10px;
+    padding: 10px;
+  }
+
+  /* 「戻る・進むボタン」 */
+  .slide-button {
+    width: 30px;
+    height: 30px;
+  }
+
+  /* コーヒーエリア */
+  .life-wrapper {
+    /* コンテンツエリア（.life-wrapper）では、子要素のライフボックス（.life-type）を横並びにするために「Flexbox」をそのまま使いつつ、折り返し設定「flex-wrap」を折り返し（wrap）に変更 */
+    flex-wrap: wrap;
+  }
+
+  .life-type {
+    /* ライフボックス（.life-type）を2列にし、間に余白をあけるため横幅を47%に設定 */
+    flex-basis: 47%;
+    margin-bottom: 20px;
+  }
+
+  /* ボックスリンク（.life-type a）のa要素の「padding」を0に設定 */
+  .life-type a {
+    padding: 0;
+  }
+
+  /* ラインナップエリア */
+  .lineup-menu {
+    margin-bottom: 0;
+  }
+
+  .lineup-menu ul {
+    /*折り返し*/
+    flex-wrap: wrap;
+    border-bottom: none;
+  }
+
+  .lineup-menu ul li {
+    /* 各メニューを2列で表示するため、横幅を50%に設定 */
+    flex-basis: 50%;
+    border-bottom: 2px solid #a67c52;
+    margin-bottom: 20px;
+  }
+
+  .lineup-menu ul li a {
+    /* ボーダーの角丸要素 */
+    border-radius: 5px;
+    padding: 6px 0;
+  }
+
+  /* 商品ラインナップ */
+  .lineup-wrapper {
+    flex-wrap: wrap;
+    /*折り返し*/
+  }
+
+  .lineup-product {
+    flex-basis: 100%;
+    /*画像ボックス要素の横幅*/
+    margin-bottom: 40px;
+  }
+
+  .lineup-image {
+    /* 上下内側の余白「padding」を3rem（48px）,左右は０に変更 */
+    padding: 3rem 0;
+  }
+
+  .more-lineup {
+    margin-top: 0;
+  }
+
+  /* パッケージエリア */
+
+  .package-wrapper {
+    flex-wrap: wrap;
+    /*折り返し*/
+  }
+
+  .package-lineup {
+    flex-basis: 100%;
+    margin-bottom: 60px;
+  }
+
+  /* 「:last-child」は擬似要素の1つで「最後の要素」に対して指定することができる */
+  .package-lineup:last-child {
+    margin-bottom: 0;
+  }
+
+  /*例）それぞれ擬似要素の使い方
+    <ul>
+      <li>1</li>  ・・・「:first-child」
+      <li>2</li>  ・・・「:nth-child(2)」
+      <li>3</li>  ・・・「:last-child」
+   </ul>*/
+
+  .store-wrapper {
+    flex-wrap: wrap;
+  }
+
+  .map-image,
+  .cafe-text {
+    flex-basis: 100%;
+  }
+
+  .map-image {
+    height: 200px;
+    margin-bottom: 30px;
+  }
+
+  .cafe-text {
+    text-align: center;
+  }
+
+  .store-name {
+    margin-bottom: 20px;
+  }
+
+  address {
+    line-height: 2.4;
+  }
+
+  /* フッターエリア */
+  .footer-content {
+    text-align: center;
+    flex-wrap: wrap;
+  }
+
+  .logo-wrapper {
+    /*縦に伸びる率の設定*/
+    flex-grow: 1;
+    flex-basis: 100%;
+  }
+
+  .logo {
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+
+  .sns-block {
+    /*中央寄せ*/
+    justify-content: center;
+    margin-bottom: 40px;
+  }
+
+  /* メニューエリア */
+  .menu {
+    flex-basis: 100%;
+    margin-bottom: 20px;
+  }
+
+  .menu:last-child {
+    margin-bottom: 0;
+  }
+
+  .menu ul li {
+    margin-bottom: 10px;
+  }
+}
+
+/* 一番上のspan要素をマイナス45度方向に回す */
+.menu-trigger.active span:nth-child(1) {
+  top: 18px;
+  transform: rotate(-45deg);
+}
+
+/* ２番目と３番目のspan要素を45度に回す */
+.menu-trigger.active span:nth-child(2),
+.menu-trigger.active span:nth-child(3) {
+  top: 18px;
+  transform: rotate(45deg);
+}
+
+
+
+
+.modal-main {
+  /* モーダルウィンドウを非表示にする */
+  display: none;
+}
+
+.modal-inner {
+  /* モーダル背景を画面幅いっぱいに設定し、位置を固定する */
+  overflow-y: scroll;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  background-color: #ffffff;
+  color: #666666;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2;
+}
+
+.inner-content {
+  /* モーダル内の要素全体の子要素を中央揃えにする */
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  max-width: 1024px;
+}
+
+.modal-inner img {
+  /* モーダル画像の幅は親要素(.modal-inner)の100%に設定 */
+  width: 100%;
+  margin: 0 auto;
+  margin-bottom: 10px;
+}
+
+.inner-title {
+  /* タイトルは上下方向の他要素との間隔を調整 */
+  margin-top: 40px;
+  margin-bottom: 32px;
+  font-size: 2.8rem;
+  font-weight: bold;
+}
+
+.inner-text {
+  /* 紹介文の文字サイズの設定。表示領域は70%で設定し、他要素との間隔調整 */
+  font-size: 1.6rem;
+  width: 70%;
+  text-align: center;
+  margin: 0 auto;
+  margin-bottom: 20px;
+}
+
+.modalClose {
+  /* カーソル設定をする(.send-button)というお問合せボタンで使用したクラスを反映しているので、その他のスタイルは自動的に反映される */
+  cursor: pointer;
+}
+
+
+
+
+
+
+
+/* ①デザインカンプを見ながら、親要素と子要素を意識しながら分類する。
+②各要素にclass名を正しく命名する。
+③インライン要素とブロック要素といった特性を意識する。
+④「display」プロパティや「position」プロパティはレイアウトをする上でキモになるので覚える。
+⑤「絶対値」「相対値」の使い方を事前に決めておく。 */

@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Beans coffee</title>
+    <link rel="stylesheet" href="./css/reset.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <script
+      src="https://code.jquery.com/jquery-3.6.1.min.js"
+      integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ="
+      crossorigin="anonymous"
+    ></script>
+    <script src="./js/script.js"></script>
+  </head>
+
+  <body>
+    <header>
+      <nav class="g-navi">
+        <div class="container nav-wrapper">
+          <ul>
+            <li class="nav-item"><a href="#concept">CONCEPT</a></li>
+            <li class="nav-item"><a href="#feature">FEATURE</a></li>
+            <li class="nav-item"><a href="#thought">THOUGHT</a></li>
+            <li class="nav-item"><a href="#lineup">LINE UP</a></li>
+            <li class="nav-item"><a href="#store">STORE</a></li>
+            <li class="nav-item"><a href="#contact">CONTACT</a></li>
+          </ul>
+        </div>
+      </nav>
+
+      <nav class="g-navi-sp">
+        <div class="sp-logo">
+          <p class="logo-title">Beans Coffee</p>
+        </div>
+        <!-- ハンバーガーメニュー -->
+        <div class="menu-trigger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </nav>
+    </header>
+
+    <section id="main-visual">
+      <div class="container mv-wrapper">
+        <div class="mv-right">
+          <h1>Beans Coffee</h1>
+          <p class="text">至福のひととき</p>
+          <div class="purchase-button">
+            <a href="#lineup">ご購入はこちら</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="concept">
+      <!-- 「エリアタイトル」と「キャッチコピー」をdivタグでまとめる。　コンテンツ幅を設定するためクラス（.container）を指定 -->
+      <div class="container">
+        <div class="title">
+          <h2>Concept</h2>
+          <!-- 「英語タイトル」と「日本語タイトル」をdivタグ（.　title）でまとめる。英語タイトルはh2タグ、日本語タイトルは　spanタグ（.ja-title）で記述 -->
+          <!-- spanタグはインライン要素を持つHTML要素（「HTMLのブロック要素・インライン要素」)段落（pタグ）ではなく、見出し（h1~h6タグ）でもない要素　の場合、spanタグを使う。 -->
+          <!--  -->
+          <span class="ja-title">コンセプト</span>
+        </div>
+        <div class="concept-copy">
+          <h3 class="main-copy">至福のひととき</h3>
+          <!-- 「br」タグを使うことで改行を入れることができる。brタグは　imgタグと同様、閉じタグは不要。<br>タグを入れることで文章の途　中に改行を入れることができる-->
+
+          <!-- （strongタグ）HTMLにて太字にしたいテキストはstrongタグを使います。strongタグはインライン要素の特性を持っているため、テキストをstrongタグで囲んだ場合でも自動的に改行されることはありません -->
+
+          <p class="concept-text about-text">
+            コンセプトは<br /><strong
+              >香りと味わいで至福のひとときをあじわっていただきたい。</strong
+            >
+          </p>
+
+          <p class="concept-text about-text">
+            芳醇な香りと口に入れた瞬間のハーモニーを、手軽に感じてもらいたい。<br />その願いを込めて、私たちは厳選したコーヒー豆を販売しております。
+          </p>
+          <p class="concept-text about-text">
+            「今日は、ガツンと濃いめで集中！明日は、まろやかな味わいでリラックス。」<br />わたしたちが厳選した最高級のコーヒーを是非御賞味ください。
+          </p>
+
+          <div class="concept-img">
+            <img
+              src="./image/image/concept_under.jpg"
+              alt="コンセプトフッター"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="feature">
+      <div class="container">
+        <div class="title">
+          <h2>Feature</h2>
+          <span class="ja-title">こだわり</span>
+        </div>
+        <div class="feature-wrapper">
+          <div class="feature-box box-desigh">
+            <img
+              class="feature-image"
+              src="./image/image/feature1.jpg"
+              alt="material"
+            />
+            <div class="feature-text">
+              <span class="feature-number">point1</span>
+              <h3 class="feature-title">安心・安全な商品</h3>
+              <p class="feature-about about-text">
+                最新のAIにより不良豆を検出しコーヒー豆の品質管理を徹底的に行い、その後政府による厳正な検査を行い、クリアしたものを出荷します。
+              </p>
+            </div>
+          </div>
+
+          <div class="feature-box box-desigh">
+            <img
+              class="feature-image"
+              src="./image/image/feature2.jpg"
+              alt="material"
+            />
+            <div class="feature-text">
+              <span class="feature-number">point2</span>
+              <h3 class="feature-title">淹れ方の手ほどき</h3>
+              <p class="feature-about about-text">
+                コーヒー豆によって、それぞれの特徴があります。それぞれの豆にあった淹れ方の動画などご用意しておりますのでご安心ください。
+              </p>
+            </div>
+          </div>
+
+          <div class="feature-box box-desigh">
+            <img
+              class="feature-image"
+              src="./image/image/feature3.jpg"
+              alt="material"
+            />
+            <div class="feature-text">
+              <span class="feature-number">point3</span>
+              <h3 class="feature-title">可愛らしいパッケージ</h3>
+              <p class="feature-about about-text">
+                至福のひとときを大切にしてほしいという願いを込めて、パッケージにもこだわっております。贈り物にも喜んでいただけることでしょう。
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="thought">
+      <div class="container">
+        <div class="title">
+          <h2>Thought</h2>
+          <p class="ja-title">想い</p>
+        </div>
+
+        <!-- ボックス全体（.staff-box）」とスライド機能に必要な「進む・戻るボタン」をまとめた親要素（.thought-container） -->
+        <div class="thought-container">
+          <!-- 一枚目のスライド -->
+          <div class="staff-box active box-design">
+            <!-- alt属性とは、「画像説明文」を設定する属性のことです。この説明文は例えば画像のファイルパスが間違っていた時に表示される文言 -->
+            <img
+              class="staff-image"
+              src="./image/image/thought1.jpg"
+              alt="コーヒーソムリエ蒔田安永"
+            />
+            <div class="staff-text">
+              <h3 class="staff-title">
+                お客様が口に運ぶ瞬間までをデザインする
+              </h3>
+              <p class="staff-about about-text">
+                コーヒ豆の種類ですが、豆そのものの風味は、品質と育った環境で全く違うんです。現在確認されている２００種類以上銘柄の中からあなた好みのコーヒー豆を探し当てる宝探しのようなワクワク感と一緒に楽しんでいただければと思います。
+              </p>
+              <p class="staff-name about-text">コーヒーソムリエ蒔田安永</p>
+            </div>
+          </div>
+
+          <!-- 二枚目のスライド -->
+          <div class="staff-box">
+            <!-- alt属性とは、「画像説明文」を設定する属性のことです。この説明文は例えば画像のファイルパスが間違っていた時に表示される文言 -->
+            <img
+              class="staff-image"
+              src="./image/image/thought2.jpg"
+              alt="ホール 安田裕美"
+            />
+            <div class="staff-text">
+              <h3 class="staff-title">笑顔を絶やさず</h3>
+              <p class="staff-about about-text">
+                コーヒーと合うお飲み物をオススメするのが私たちの仕事です。特に初めていらっしゃるお客様にはステキな時間を過ごして頂けるよう、笑顔で接客する事を心がけています。dawnCAFEでのひと時が次の活力になれれば幸せです。
+              </p>
+              <p class="staff-name about-text">ホール 安田裕美</p>
+            </div>
+          </div>
+
+          <!-- 三枚目のスライド -->
+          <div class="staff-box">
+            <!-- alt属性とは、「画像説明文」を設定する属性のことです。この説明文は例えば画像のファイルパスが間違っていた時に表示される文言 -->
+            <img
+              class="staff-image"
+              src="./image/image/thought3.jpg"
+              alt="店内プロデュース沖田総悟"
+            />
+            <div class="staff-text">
+              <h3 class="staff-title">お客さまの憩いの空間であるために</h3>
+              <p class="staff-about about-text">
+                カフェという括りではなく、「コーヒーショップ」としてお客様にとって最高の空間をイメージしながらプロデュースしました。Beans
+                Coffeeにてかけがえのない時間をお過ごしください。
+              </p>
+              <p class="staff-name about-text">店内プロデュース沖田総悟</p>
+            </div>
+          </div>
+          <!-- 戻る・進むボタン -->
+          <span class="slide-button prev"></span>
+          <span class="slide-button next"></span>
+        </div>
+      </div>
+    </section>
+
+    <section id="coffeelife">
+      <!-- エリアタイトル -->
+      <div class="container">
+        <div class="title">
+          <h2>Coffee Life</h2>
+          <p class="ja-title">豊かなコーヒーライフ</p>
+        </div>
+      </div>
+      <!-- ライフボックス -->
+      <div class="life-wrapper">
+        <div class="life-type">
+          <!-- クリックすると画像が大きく表示されるモーダル機能 -->
+          <a href="#" class="modalopen" data-target="modal01">
+            <img class="life-img" src="./image/image/life1.jpg" alt="morning" />
+            <p class="life-name">morning</p>
+          </a>
+        </div>
+        <!-- 一つ目のモーダルの中身 -->
+        <div class="modal-main js-modal" id="modal01">
+          <div class="modal-inner">
+            <div class="inner-content">
+              <p class="inner-title">morning</p>
+              <img
+                src="./image/image/life1.jpg"
+                alt="teatime"
+                class="image-modal"
+              />
+              <p class="inner-text">朝からしゃきっとしたい日に！</p>
+              <a class="send-button modalClose">Close</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="life-type">
+          <!-- クリックすると画像が大きく表示されるモーダル機能 -->
+          <a href="#" class="modalopen" data-target="modal02">
+            <img class="life-img" src="./image/image/life2.jpg" alt="refresh" />
+            <p class="life-name">refresh</p>
+          </a>
+        </div>
+        <!-- 二つ目のモーダルの中身 -->
+        <div class="modal-main js-modal" id="modal02">
+          <div class="modal-inner">
+            <div class="inner-content">
+              <p class="inner-title">refresh</p>
+              <img
+                src="./image/image/life2.jpg"
+                alt="party"
+                class="image-modal"
+              />
+              <p class="inner-text">リフレッシュしたいときに</p>
+              <a class="send-button modalClose">Close</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="life-type">
+          <!-- クリックすると画像が大きく表示されるモーダル機能 -->
+          <a href="#" class="modalopen" data-target="modal03">
+            <img class="life-img" src="./image/image/life3.jpg" alt="move" />
+            <p class="life-name">move</p>
+          </a>
+        </div>
+        <!-- 三つ目のモーダルの中身 -->
+        <div class="modal-main js-modal" id="modal03">
+          <div class="modal-inner">
+            <div class="inner-content">
+              <p class="inner-title">move</p>
+              <img
+                src="./image/image/life3.jpg"
+                alt="gifts"
+                class="image-modal"
+              />
+              <p class="inner-text">移動にちょうどいいカフェインレスコーヒー</p>
+              <a class="send-button modalClose">Close</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="life-type">
+          <!-- クリックすると画像が大きく表示されるモーダル機能 -->
+          <a href="#" class="modalopen" data-target="modal04">
+            <img
+              class="life-img"
+              src="./image/image/life4.jpg"
+              alt="with friend"
+            />
+            <p class="life-name">with friend</p>
+          </a>
+        </div>
+        <!-- 四つ目のモーダルの中身 -->
+        <div class="modal-main js-modal" id="modal04">
+          <div class="modal-inner">
+            <div class="inner-content">
+              <p class="inner-title">with friend</p>
+              <img
+                src="./image/image/life4.jpg"
+                alt="with friend"
+                class="image-modal"
+              />
+              <p class="inner-text">友人との時間にコーヒーで彩りを</p>
+              <a class="send-button modalClose">Close</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="lineup">
+      <div class="container">
+        <!-- エリアタイトル -->
+        <div class="title">
+          <h2>Line up</h2>
+          <p class="ja-title">シチュエーション別のおすすめ</p>
+        </div>
+
+        <!-- ラインナップメニュー×4つ -->
+        <!-- タブを切り替えることで各々のシチュエーションに合う味のコーヒーが表示される機能を設定するために
+      (.lineup-tab a)メニュータブに「data-filter」属性、(.lineup-product)商品ボックスに「data-category」属性を設定する -->
+        <div class="lineup-menu">
+          <ul class="filter">
+            <li class="lineup-tab active">
+              <a class="ranking" data-filter="ranking" href="#">ranking</a>
+            </li>
+            <li class="lineup-tab">
+              <a class="morning" data-filter="morning" href="#">morning</a>
+            </li>
+            <li class="lineup-tab">
+              <a class="refresh" data-filter="refresh" href="#">refresh</a>
+            </li>
+            <li class="lineup-tab">
+              <a class="gifts" data-filter="gifts" href="#">gifts</a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- ラインナップボックス×3つ -->
+        <div class="lineup-wrapper">
+          <!-- 商品１つ目 -->
+          <div class="lineup-product" data-category="morning">
+            <div class="lineup-image">
+              <img src="./image/image/lineup1.jpg" alt="ホットコーヒー" />
+            </div>
+            <div class="lineup-about">
+              <div class="lineup-name">
+                <span class="name-en">Hot Coffee</span>
+                <span class="name-ja">ホット専用</span>
+              </div>
+              <p class="lineup-text about-text">
+                マイルドな酸味と芳醇で落ち着く香りが絶妙な逸品です。
+              </p>
+            </div>
+          </div>
+
+          <!-- 商品２つ目 -->
+          <div class="lineup-product" data-category="refresh">
+            <div class="lineup-image">
+              <img src="./image/image/lineup2.jpg" alt="アイスコーヒー" />
+            </div>
+            <div class="lineup-about">
+              <div class="lineup-name">
+                <span class="name-en">Ice Coffee</span>
+                <span class="name-ja">アイス専用</span>
+              </div>
+              <p class="lineup-text about-text">
+                スッキリとした苦味が特徴的な商品です。
+              </p>
+            </div>
+          </div>
+          <!-- 商品３つ目 -->
+          <div class="lineup-product" data-category="gifts">
+            <div class="lineup-image">
+              <img src="./image/image/lineup3.jpg" alt="カフェオレ" />
+            </div>
+            <div class="lineup-about">
+              <div class="lineup-name">
+                <span class="name-en">Cafe au lait</span>
+                <span class="name-ja">カフェオレ</span>
+              </div>
+              <p class="lineup-text about-text">
+                ミルクと合わせることにこだわった苦味の強い
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- moreボタン -->
+        <div class="more-lineup">
+          <a href="#" class="btn-more">more</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- エリアタイトル -->
+    <section id="package">
+      <div class="container">
+        <div class="title">
+          <h2>Package</h2>
+          <p class="ja-title">場面に合わせて３種類からお選びいただけます</p>
+        </div>
+        <!-- パッケージボックス✖︎３つ -->
+        <div class="package-wrapper">
+          <!-- 画像 -->
+          <div class="package-lineup">
+            <img
+              class="package-image"
+              src="./image/image/package1.jpg"
+              alt="単品"
+            />
+            <!-- テキスト -->
+            <div class="pack-text">
+              <h3 class="package-title">ギフトセット　単品</h3>
+              <p class="package-value">¥910（税込）</p>
+            </div>
+            <!-- 「商品」と「個数」を選ぶための「セレクトボックス」というHTML要素を使う -->
+            <div class="purchase-wrapper">
+              <select class="package-select" name="select">
+                <!-- optionタグselectタグ内で使用。メニューの選択肢を作成する要素 -->
+                <option value="">商品を選ぶ</option>
+                <option value="lemon">ブラック</option>
+                <option value="pistachio">アイス</option>
+                <option value="strawberry">ミルク</option>
+              </select>
+              <!-- 選択フォーム -->
+              <div class="purchase-number">
+                数量：
+                <select class="number" name="number">
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                </select>
+              </div>
+              <!-- ボタン -->
+              <div class="select-cart">
+                <a href="#">カートに入れる</a>
+              </div>
+            </div>
+
+            <p class="package-text about-text">
+              お好きなコーヒーを親しいあの人へのプレゼント。
+            </p>
+          </div>
+
+          <div class="package-lineup">
+            <img
+              class="package-image"
+              src="./image/image/package2.jpg"
+              alt="単品"
+            />
+            <!-- テキスト -->
+            <div class="pack-text">
+              <h3 class="package-title">ギフトセット　２個セット</h3>
+              <p class="package-value">¥1,820（税込）</p>
+            </div>
+            <!-- 「商品」と「個数」を選ぶための「セレクトボックス」というHTML要素を使う -->
+            <div class="purchase-wrapper">
+              <select class="package-select" name="select">
+                <option value="">商品を選ぶ</option>
+                <option value="lemon">ブラック</option>
+                <option value="pistachio">アイス</option>
+                <option value="strawberry">ミルク</option>
+              </select>
+              <!-- 選択フォーム -->
+              <div class="purchase-number">
+                数量：
+                <select class="number" name="number">
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                </select>
+              </div>
+              <!-- ボタン -->
+              <div class="select-cart">
+                <a href="#">カートに入れる</a>
+              </div>
+            </div>
+
+            <p class="package-text about-text">
+              お好きなコーヒーが選べる２つセット。お好みのコーヒーをいつも頑張るあなたの原動力へ。
+            </p>
+          </div>
+
+          <div class="package-lineup">
+            <img
+              class="package-image"
+              src="./image/image/package3.jpg"
+              alt="単品"
+            />
+            <!-- テキスト -->
+            <div class="pack-text">
+              <h3 class="package-title">ギフトセット　3種セット</h3>
+              <p class="package-value">¥3,640（税込）</p>
+            </div>
+            <!-- 「商品」と「個数」を選ぶための「セレクトボックス」というHTML要素を使う -->
+            <div class="purchase-wrapper">
+              <select class="package-select" name="select">
+                <option value="">商品を選ぶ</option>
+                <option value="lemon">ブラック</option>
+                <option value="pistachio">アイス</option>
+                <option value="strawberry">ミルク</option>
+              </select>
+              <!-- 選択フォーム -->
+              <div class="purchase-number">
+                数量：
+                <select class="number" name="number">
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                </select>
+              </div>
+              <!-- ボタン -->
+              <div class="select-cart">
+                <a href="#">カートに入れる</a>
+              </div>
+            </div>
+
+            <p class="package-text about-text">
+              お好きなコーヒーが選べる3つのセット。気兼ねなく過ごせる仲間と一緒に素敵なブレイクタイムを。
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="store">
+      <!-- エリアタイトル -->
+      <div class="container">
+        <div class="title">
+          <h2>Store</h2>
+          <p class="ja-title">店舗情報</p>
+        </div>
+        <div class="store-wrapper">
+          <!-- GoogleMap埋め込み -->
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d51862.58814923583!2d139.692616!3d35.666861999999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188cb2eb3108d1%3A0xf11cd9b2395b6677!2z5p2x5Lqs6YO95riL6LC35Yy6!5e0!3m2!1sja!2sjp!4v1664803533177!5m2!1sja!2sjp"
+            width="512"
+            height="360"
+            style="border: 0"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+          <div class="cafe-text">
+            <p class="store-name">Beans Coffee</p>
+            <address>
+              <p>
+                〒100-8111<br />
+                東京都千代田区千代田1-1<br />
+                TEL:<a class="store-address" href="tel:0120000000"
+                  >0120-000-000</a
+                >
+              </p>
+            </address>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <div class="title">
+          <h2>Contact</h2>
+          <p class="ja-title">お問合わせ</p>
+        </div>
+        <!-- formタグを使って、「お名前」「メールアドレス」「主なご用件」「お問い合わせ内容」「送信ボタン」という5つの要素を囲みます
+        formタグはお問い合わせフォームなどで入力・選択された情報を「指定したページに送るために必要」なタグになります-->
+        <form action="index.php" method="post">
+          <!-- action属性は「入力されたデータを送る先を指定」することができ、method属性は「データの送り方を指定」することができます -->
+          <div class="ct-block">
+            <!-- labelタグはフォームの項目名を指定する時に使用します。for属性では「関連している入力要素の名前」を指定したり、class名を設定することもできます -->
+            <label class="contact-text" for="name">お名前</label>
+            <!-- inputタグは主にformタグ内に配置し、情報入力が行えるタグです。imgタグと同様に閉じタグは必要ないです。
+          inputタグでは「type属性（入力タイプ）」「name属性（名前）」「placeholder属性（初期値）」などを設定することができます -->
+            <input
+              type="text"
+              name="yourname"
+              placeholder="例：田中太郎"
+              class="form-name"
+            />
+          </div>
+
+          <div class="ct-block">
+            <label class="contact-text" for="email">メールアドレス</label>
+            <input
+              type="text"
+              name="mail"
+              placeholder="例：×××××＠△△△△△.com"
+              class="form-mail"
+            />
+          </div>
+
+          <div class="ct-block">
+            <label for="main" class="contact-text">主なご用件</label>
+            <!-- セレクトボックス（selectタグ）の親要素（.cp-howto）を記述 selectタグは選択ボックスを作成をするHTMLタグです。その子要素になるoptionタグは選択肢を指定するHTMLタグ-->
+            <div class="cp-howto">
+              <select name="main-request">
+                <option value="" hidden>ご選択ください</option>
+                <option value="1">お店の予約について</option>
+                <option value="2">宅配サービスについて</option>
+                <option value="3">商品について</option>
+                <option value="4">社員採用について</option>
+              </select>
+            </div>
+          </div>
+          <div class="ct-block">
+            <label for="request-about" class="contact-text"
+              >お問い合わせ内容</label
+            >
+            <!-- お問い合わせ内容など記入する文章が多くなるフォームにはtextareaタグを使います。基本的にはinputタグと扱い方は同じですが、「cols属性」にて1行あたりの文字数を指定し、「rows属性」にて表示する行数を指定することができます -->
+            <textarea
+              name="request-about"
+              id="request-about"
+              cols="60"
+              rows="6"
+              placeholder="ここに記入して下さい"
+            >
+            </textarea>
+          </div>
+
+          <!-- inputタグを用いて送信ボタンを作成します。type属性を「submit」にすることで「formタグ内に入力された情報を送信するボタン」として設定することができます。value属性はボタンに表示されるテキストとして表示されます -->
+          <div class="ct-block">
+            <input class="send-button" type="submit" value="送信" />
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <footer>
+      <div class="container">
+        <div class="footer-content">
+          <div class="logo-wrapper">
+            <a href="#" class="logo">Beans Coffee</a>
+            <!-- SNSボックス（.sns-block）にそれぞれSNSページへのリンクを追加していきます。
+                  それぞれ「Twitter」「Facebook」「Instagram」の表示する画像（.sns-mark）を用意して、imgタグで表示します。
+                  imgタグを囲むようにaタグ（.mark）を記述して、それぞれリンク先のURLをhref属性に入力します。※今回は各SNSのトップページを指定しています。
+                  ちなみにaタグには「blank属性」という「リンク先をどのように開くか」を指定できる属性があります。同じブラウザのタブ内で表示する場合は指定は不要ですが、別のタブで開きたい場合は「_blank」を記述することで別タブが開くようになります -->
+            <div class="sns-block">
+              <div class="sns-block">
+                <a class="mark" href="https://twitter.com/" target="_blank">
+                  <img
+                    class="sns-mark"
+                    src="./image/image/icon_tw_wh.png"
+                    alt="twitter"
+                    width="30px"
+                  />
+                </a>
+
+                <a
+                  class="mark"
+                  href="https://www.facebook.com/"
+                  target="_blank"
+                >
+                  <img
+                    class="sns-mark"
+                    src="./image/image/icon_fb_wh.png"
+                    alt="facebook"
+                    width="30px"
+                  />
+                </a>
+
+                <a
+                  class="mark"
+                  href="https://www.instagram.com/"
+                  target="_blank"
+                >
+                  <img
+                    class="sns-mark"
+                    src="./image/image/icon_insta_wh.png"
+                    alt="instagram"
+                    width="30px"
+                  />
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- メニューボックス（.menu）の子要素（ulタグ、liタグ）を記述します。メニュー（.menu ul li）には各エリアにページ内リンクするテキストを設定します。
+                ulタグでリスト化してあげて、liタグでリスト内のテキストを記述し、aタグでテキストを囲み、リンク先のURL（今回はページ内リンクなのでid名）を記述 -->
+          <div class="menu">
+            <div class="menu">
+              <ul>
+                <li><a href="#concept">CONCEPT</a></li>
+                <li><a href="#feature">FEATURE</a></li>
+                <li><a href="#thought">THOUGHT</a></li>
+                <li><a href="#lineup">LINEUP</a></li>
+                <li><a href="#store">STORE</a></li>
+                <li><a href="#contact">CONTACT</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="menu">
+            <div class="menu">
+              <ul>
+                <li><a href="#">利用規約</a></li>
+                <li><a href="#">特定商取引法について</a></li>
+                <li><a href="#">プライバシーポリシー</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
